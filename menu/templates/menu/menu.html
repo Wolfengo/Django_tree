@@ -1,0 +1,13 @@
+{% load menu_tags %}
+
+{% draw_menu menu as my_menu %}
+
+{% block content %}
+    {% if my_menu %}
+        {% for key, value in my_menu.items %}
+            <p><a href="{{ value.url }}">{{ value.title }}</a></p>
+        {% endfor %}
+    {% else %}
+    <p>404 - not found</p>
+    {% endif %}
+{% endblock %}

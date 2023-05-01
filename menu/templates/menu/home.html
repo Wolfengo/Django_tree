@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load menu_tags %}
+
+{% block content %}
+    {% for key, value in menu.items %}
+        <p><a href="{{ value.url }}">{{ value.title }}</a></p>
+    {% endfor %}
+{% endblock %}
